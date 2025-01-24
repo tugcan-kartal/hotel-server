@@ -7,7 +7,6 @@ export class AppService {
     return 'Hello World!';
   }
 
-  // Firestore'dan kullanıcıları çekme
   async getUsers() {
     const snapshot = await admin.firestore().collection('users').get();
     return snapshot.docs.map((doc) => ({
@@ -16,7 +15,6 @@ export class AppService {
     }));
   }
 
-  // Firestore'dan rezervasyonları çekme
   async getReservations() {
     const snapshot = await admin.firestore().collection('reservations').get();
     return snapshot.docs.map((doc) => ({
